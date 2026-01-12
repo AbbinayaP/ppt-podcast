@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Podcaster - Turn Slides into Audio</title>
+
+    <!-- ✅ FIXED CSS PATH -->
+    <link rel="stylesheet" href="/frontend/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PPT Podcaster 🎙️</h1>
+            <p>Turn your PowerPoint presentations into engaging audio podcasts.</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="upload-section">
+                <div class="drop-zone" id="drop-zone">
+                    <p>Drag & Drop your PPTX file here</p>
+                    <span>or</span>
+                    <label for="file-input" class="btn">Browse Files</label>
+                    <input type="file" id="file-input" accept=".pptx, .ppt" hidden>
+                </div>
+
+                <div id="file-info" class="hidden">
+                    <p>Selected: <span id="filename"></span></p>
+                    <button id="convert-btn" class="btn primary">Generate Podcast</button>
+                    <button id="reset-btn" class="btn secondary">Cancel</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p id="loading-text">Extracting content...</p>
+            </div>
+
+            <div id="result-section" class="hidden">
+                <div class="audio-player">
+                    <h3>🎧 Your Podcast</h3>
+                    <audio id="audio-player" controls preload="metadata"></audio>
+                </div>
+
+                <div class="script-container">
+                    <h3>📜 Script</h3>
+                    <div class="script-box">
+                        <p id="script-content"></p>
+                    </div>
+                </div>
+
+                <button id="new-btn" class="btn secondary">Convert Another</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Gemini & Edge TTS</p>
+        </footer>
+    </div>
+
+    <!-- ✅ FIXED JS PATH -->
+    <script src="/frontend/script.js"></script>
+</body>
+</html>
